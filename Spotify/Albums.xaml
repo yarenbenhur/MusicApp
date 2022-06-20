@@ -1,0 +1,50 @@
+﻿<local:BasePage x:Class="Spotify.Albums"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Spotify"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Albums">
+
+    <Grid Background="#FF6B9792" Margin="0,0,-168,-0.4">
+        <Label Content="My Albums" FontSize="30"  HorizontalAlignment="Center" Margin="329,19,305,0" VerticalAlignment="Top" Width="166" Background="{x:Null}" Foreground="White"/>
+        <Button Content="Yeni Album Olustur" x:Name="btAlbumOlustur" Click="btAlbumOlustur_Click"  BorderThickness="6" HorizontalAlignment="Left" Margin="802,81,0,0" VerticalAlignment="Top" Width="125" Height="37" Background="{x:Null}" BorderBrush="#FF9DDF8C"/>
+
+        <ListBox  x:Name="lbAlbum" HorizontalAlignment="Left" Height="285" Margin="73,81,0,0" VerticalAlignment="Top" Width="243" SelectionChanged="lbAlbum_SelectionChanged" Background="{x:Null}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding AlbumName}"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="lbAlbumSong"  HorizontalAlignment="Left" Height="285" Margin="458,84,0,0" VerticalAlignment="Top" Width="243" Background="{x:Null}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding SongName}"/>
+                        <Button Margin="100,0,50,0" x:Name="btPlay" Click="btPlay_Click">Başlat</Button>
+                        <Button Margin="150,0,0,0" x:Name="lbStop" Click="lbStop_Click">Duraklat</Button>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Popup Name="Popup2"  Width="400" Placement="Custom" >
+            <StackPanel Background="#FFBBED84" Height="105" >
+                <Grid>
+                    <Button x:Name="btClose2" Content="X" Click="btClose_Click" FontSize="26" Padding="0" HorizontalAlignment="Right"   Width="35" FontWeight="Bold" BorderBrush="#FFDDDDDD"  Foreground="#FF576C80"/>
+                    <TextBlock x:Name="McTextBlock2" FontSize="20" HorizontalAlignment="Right" Width="104" Margin="0,0,279,0" Height="34" Padding="0,10,0,0" 
+                           ><Run Text="Albüm Adı:"/></TextBlock>
+                </Grid>
+
+                <TextBox x:Name="tbAlbumName" HorizontalAlignment="Left" Height="35" Margin="13,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="330"/>
+                <Button x:Name="btOk" Content="Ok" Click="btOk_Click"  Margin="362,0,0,700" VerticalAlignment="Bottom"/>
+            </StackPanel>
+        </Popup>
+
+    </Grid>
+</local:BasePage>

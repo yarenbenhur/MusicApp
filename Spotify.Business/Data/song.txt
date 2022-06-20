@@ -1,0 +1,4 @@
+{"SongId":1,"ArtistId":2,"SongName":"Martýlar","SongPath":"C:\\Users\\yarenbenhur\\Desktop\\Lessons\\c#\\Spotify\\Spotify.Business\\Data\\1.mp3"}
+{"SongId":2,"ArtistId":3,"SongName":"Poþet","SongPath":""}
+{"SongId":3,"ArtistId":1,"SongName":"Dudu Dudu","SongPath":""}
+{"SongId":4,"ArtistId":1,"SongName":"Kuzu Kuzu","SongPath":"C:\\Users\\yarenbenhur\\Desktop\\Lessons\\c#\\Spotify\\Spotify.Business\\Data\\2.mp3"}

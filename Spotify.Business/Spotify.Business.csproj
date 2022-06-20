@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3140E29C-9768-4DF4-81EA-2CF5FDC5B4E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spotify.Business</RootNamespace>
+    <AssemblyName>Spotify.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\AlbumContext.cs" />
+    <Compile Include="Context\AlbumSongContext.cs" />
+    <Compile Include="Context\ArtistContext.cs" />
+    <Compile Include="Context\BaseContext.cs" />
+    <Compile Include="Context\IAlbumSongContext.cs" />
+    <Compile Include="Context\IAlbumContext.cs" />
+    <Compile Include="Context\IArtistContext.cs" />
+    <Compile Include="Context\ISongContext.cs" />
+    <Compile Include="Context\IUserContext.cs" />
+    <Compile Include="Context\SongContext.cs" />
+    <Compile Include="Context\UserDBContext.cs" />
+    <Compile Include="FileOperations.cs" />
+    <Compile Include="Model\Album.cs" />
+    <Compile Include="Model\AlbumSong.cs" />
+    <Compile Include="Model\Artist.cs" />
+    <Compile Include="Model\Result\AlbumSongListResult.cs" />
+    <Compile Include="Model\Result\BaseResult.cs" />
+    <Compile Include="Model\Result\GetAlbumListResult.cs" />
+    <Compile Include="Model\Result\GetArtistListResult.cs" />
+    <Compile Include="Model\Result\SongListResult.cs" />
+    <Compile Include="Model\Result\UserLoginResult.cs" />
+    <Compile Include="Model\Result\UserSignUpResult.cs" />
+    <Compile Include="Model\Result\WriteAlbumResult.cs" />
+    <Compile Include="Model\Result\WriteAlbumSongResult.cs" />
+    <Compile Include="Model\Song.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Context\UserContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
